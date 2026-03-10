@@ -8,14 +8,11 @@ export default defineConfig({
             input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,
         }),
-        tailwindcss({
-            darkMode: false,
-            content: [
-                './resources/**/*.blade.php',
-                './resources/**/*.js',
-                './resources/**/*.vue',
-                './node_modules/flowbite/**/*.js'
-            ]
-        }),
+        tailwindcss(),
     ],
+    server: {
+        watch: {
+            ignored: ['**/storage/framework/views/**'],
+        },
+    },
 });
